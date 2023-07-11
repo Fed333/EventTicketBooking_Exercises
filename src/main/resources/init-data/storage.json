@@ -1,0 +1,52 @@
+{
+  "events": [
+    {"id":  1, "title": "EPAM Townhall", "date": "2022-09-05 15:30:00", "ticketPrice":  20 },
+    {"id":  2, "title": "VNTU openday", "date": "2022-09-05 11:20:00", "ticketPrice":  20},
+    {"id":  3, "title": "Kalush charity music concert", "date": "2022-09-06 18:45:00", "ticketPrice":  3600},
+    {"id":  4, "title": "EPAM Townhall", "date": "2022-10-05 15:30:00", "ticketPrice":  20},
+    {"id":  5, "title": "EPAM Townhall", "date": "2022-11-05 15:30:00", "ticketPrice":  20},
+    {"id":  6, "title": "Event1 to be deleted", "date": "2022-12-05 15:30:00", "ticketPrice":  20},
+    {"id":  7, "title": "Jazz concert", "date": "2022-09-25 19:30:00", "ticketPrice":  20},
+    {"id":  8, "title": "Speaking club", "date": "2022-09-25 15:30:00", "ticketPrice":  20}
+  ],
+  "users": [
+    {"id": 1, "name":  "Roman", "email": "kovalchuk.roman03@gmail.com", "account" : {"id": 1, "money":  6500}},
+    {"id": 2, "name":  "Pips", "email": "mpostryk@gmail.com", "account": {"id": 2, "money": 4500}},
+    {"id": 3, "name":  "Ivan", "email": "builbik@gmail.com", "account":  {"id": 3, "money": 7500}},
+    {"id": 4, "name":  "Kyrylo", "email": "kyrylo@gmail.com"},
+    {"id": 5, "name":  "Ivan", "email": "vanno8782@gmail.com"},
+    {"id": 6, "name":  "Serhiy", "email": "meizum@gmail.com"},
+    {"id": 7, "name":  "Andrii", "email": "riko@gmail.com"},
+    {"id": 8, "name":  "Iryna", "email": "ira@gmail.com"},
+    {"id": 9, "name":  "Tetyana", "email": "taniusha@gmail.com"},
+    {"id": 10, "name":  "Viktoria", "email": "viktoria@gmail.com"},
+    {"id": 11, "name":  "Ivan", "email": "tocker342@gmail.com"},
+    {"id": 12, "name":  "Mykhailo", "email": "mykhailo@gmail.com"},
+    {"id": 13, "name":  "Hlib", "email": "glego@gmail.com", "account":  {"id": 4, "money": 2600}},
+    {"id": 14, "name":  "Pavlo", "email": "pavlo_makushak@gmail.com", "account":  {"id": 5, "money": 2500}},
+    {"id": 15, "name":  "Updated", "email": "updated@gmail.com"},
+    {"id": 16, "name":  "Deleted", "email": "deleted@gmail.com"}
+  ],
+  "tickets": [
+    {"id": 1, "eventId": 1, "userId": 1, "category": "PREMIUM", "place": 12, "cancelled": false},
+    {"id": 2, "eventId": 1, "userId": 3, "category": "STANDARD", "place": 13, "cancelled": false},
+    {"id": 3, "eventId": 1, "userId": 5, "category": "BAR", "place": 2, "cancelled": true},
+    {"id": 4, "eventId": 1, "userId": 13, "category": "STANDARD", "place": 10, "cancelled": true},
+    {"id": 5, "eventId": 2, "userId": 11, "category": "STANDARD", "place": 1, "cancelled": false},
+    {"id": 6, "eventId": 2, "userId": 14, "category": "STANDARD", "place": 2, "cancelled": false},
+    {"id": 7, "eventId": 2, "userId": 6, "category": "STANDARD", "place": 3, "cancelled": true},
+    {"id": 8, "eventId": 3, "userId": 4, "category": "STANDARD", "place": 132, "cancelled": false},
+    {"id": 9, "eventId": 3, "userId": 3, "category": "STANDARD", "place": 133, "cancelled": false},
+    {"id": 10, "eventId": 3, "userId": 1, "category": "STANDARD", "place": 134, "cancelled": false},
+    {"id": 11, "eventId": 3, "userId": 2, "category": "STANDARD", "place": 135, "cancelled": false},
+    {"id": 12, "eventId": 3, "userId": 7, "category": "STANDARD", "place": 136, "cancelled": false},
+    {"id": 13, "eventId": 3, "userId": 6, "category": "STANDARD", "place": 137, "cancelled": false},
+    {"id": 14, "eventId": 3, "userId": 8, "category": "PREMIUM", "place": 10, "cancelled": false},
+    {"id": 15, "eventId": 3, "userId": 9, "category": "PREMIUM", "place": 11, "cancelled": false},
+    {"id": 16, "eventId": 3, "userId": 10, "category": "PREMIUM", "place": 12, "cancelled": false},
+    {"id": 17, "eventId": 3, "userId": 13, "category": "STANDARD", "place": 138, "cancelled": false},
+    {"id": 18, "eventId": 3, "userId": 5, "category": "STANDARD", "place": 139, "cancelled": false},
+    {"id": 19, "eventId": 3, "userId": 12, "category": "STANDARD", "place": 140, "cancelled": false},
+    {"id": 20, "eventId": 3, "userId": 14, "category": "STANDARD", "place": 141, "cancelled": false}
+  ]
+}

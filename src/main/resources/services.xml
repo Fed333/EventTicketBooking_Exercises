@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           https://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                           http://www.springframework.org/schema/context
+                           https://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/tx
+                           https://www.springframework.org/schema/tx/spring-tx.xsd
+                           http://www.springframework.org/schema/mvc
+                           https://www.springframework.org/schema/mvc/spring-mvc.xsd"
+       default-init-method="init">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="org.fed333.ticket.booking.app.controller"/>
+    <mvc:annotation-driven />
+    <tx:annotation-driven/>
+
+    <import resource="spring-data.xml"/>
+    <import resource="test-data.xml"/>
+
+    <bean class="org.fed333.ticket.booking.app.config.InitializeStorageWithPreparedDataBeanPostProcessor" p:storageSourceJson="${init.data.json.storage}"/>
+
+    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <property name="locations" value="classpath:application.properties"/>
+    </bean>
+
+    <bean id="saveEntityValidator"
+          class="org.fed333.ticket.booking.app.service.component.SaveEntityValidator"
+          scope="prototype">
+    </bean>
+
+    <bean id="userService"
+          class="org.fed333.ticket.booking.app.service.UserService"
+          init-method="init">
+        <property name="saveUserValidator" ref="saveEntityValidator"/>
+    </bean>
+
+    <bean id="ticketService"
+          class="org.fed333.ticket.booking.app.service.TicketService"
+          init-method="init">
+        <property name="saveTicketValidator" ref="saveEntityValidator"/>
+    </bean>
+
+    <bean id="eventService"
+          class="org.fed333.ticket.booking.app.service.EventService"
+          init-method="init">
+        <property name="saveEventValidator" ref="saveEntityValidator"/>
+    </bean>
+
+    <bean id="userAccountService"
+          class="org.fed333.ticket.booking.app.service.UserAccountService">
+    </bean>
+
+    <bean id="bookingFacade"
+          class="org.fed333.ticket.booking.app.facade.impl.BookingFacadeImpl">
+        <constructor-arg ref="userService"/>
+        <constructor-arg ref="eventService"/>
+        <constructor-arg ref="ticketService"/>
+        <constructor-arg ref="userAccountService"/>
+    </bean>
+
+    <bean id="storage"
+          class="org.fed333.ticket.booking.app.util.StorageDataUtil">
+        <property name="eventRepository" ref="eventRepository"/>
+        <property name="userRepository" ref="userRepository"/>
+        <property name="ticketRepository" ref="ticketRepository"/>
+        <property name="accountRepository" ref="userAccountRepository"/>
+    </bean>
+
+    <bean id="eventMapper"
+          class="org.fed333.ticket.booking.app.mapper.EventMapper"/>
+
+    <bean id="ticketMapper"
+          class="org.fed333.ticket.booking.app.mapper.TicketMapper"/>
+
+</beans>
