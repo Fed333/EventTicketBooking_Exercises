@@ -1,21 +1,47 @@
-# JUnit Mockito Practicing
-This Java project focuses on implementing unit tests for the `org.fed333.ticket.booking.app.service` package.
+# Event Ticket Booking Exercises
 
-## Issues:
-The following test classes need to be implemented:
+This Java project represents a simple ticket booking service and contains practice tasks on various topics.
 
-* `SaveEntityValidatorTest`
-* `EventServiceTest`
-* `TicketServiceTest`
-* `UserAccountServiceTest`
-* `UserServiceTest`
+## Domain
 
-## Requirements:
-* All test classes must be implemented using JUnit4.
-* Mockito framework must be used for object mocking.
-* AssertJ Core assertion library must be used for assertions.
-* Test coverage for the service package must be equal to 100%.
-* All implementations of test methods must follow the specified naming convention.
+### User
+#### Properties
+- `Long id`
+- `String name`
+- `String email`
+#### Relationships
+- `UserAccount account`: The user's account (one-to-one relationship)
 
-## Pay attention
-The project already contains all necessary dependencies, so you are not supposed to change the `pom.xml`.
+### UserAccount
+#### Properties
+- `Long id`
+- `Double money`: The amount of money in the user's account
+
+### Event
+#### Properties
+- `Long id`
+- `String title`
+- `Date date`: The event's date (format 'yyyy-MM-dd')
+- `double ticketPrice`: The price of a ticket for the event
+#### Relationships
+- `List<Ticket> tickets`: A list of tickets for the event (one-to-many relationship)
+
+### Ticket
+#### Properties
+- `Long id`
+- `int place`: The seat number for the ticket
+- `boolean cancelled`: Indicates whether the ticket has been cancelled
+#### Relationships
+- `Event event`: The event the ticket is for (one-to-one relationship)
+- `User user`: The user who owns the ticket (one-to-one relationship)
+- `Category category`: The ticket's category (one-to-one relationship)
+
+### Category
+#### Enumerations
+- `STANDARD`: Standard ticket category
+- `ADVANCED`: Advanced ticket category
+- `PREMIUM`: Premium ticket category
+
+## Exercises
+- Unit tests exercise: To work on this exercise, run `git checkout unit-tests-exercise`
+- Integration tests exercise: To work on this exercise, run `git checkout integration-tests-exercise`
