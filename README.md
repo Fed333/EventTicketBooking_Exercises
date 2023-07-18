@@ -1,47 +1,23 @@
-# Event Ticket Booking Exercises
+# Integration Tests Practicing
+This Java project focuses on implementing the application integration tests. 
+The tests can be found under the `src/itest/java` location.
 
-This Java project represents a simple ticket booking service and contains practice tasks on various topics.
+## Issues
+The following test classes to be implemented:
+- `EhCacheHibernateITest`
+- `InitializeStorageWithPreparedDataBeanPostProcessorITest`
+- `BookingFacadeITest`
 
-## Domain
+## Requirements
+- All test classes must be implemented using JUnit4.
+- The project is made up of Spring and uses both xml and annotation configurations.
+- The tests must be executed in a working environment with a raised application context.
+- No mocks must be used.
+- Use `src/main/resources/services.xml` as a configuration source.
+- Use `src/main/resources/init-data/storage.json` as an initial and expected dataset.
+- Use the test profile for all integration tests to make it work with the H2 in-memory database.
+- AssertJ Core assertion library must be used for assertions.
+- All implementations of test methods must follow the specified naming convention.
 
-### User
-#### Properties
-- `Long id`
-- `String name`
-- `String email`
-#### Relationships
-- `UserAccount account`: The user's account (one-to-one relationship)
-
-### UserAccount
-#### Properties
-- `Long id`
-- `Double money`: The amount of money in the user's account
-
-### Event
-#### Properties
-- `Long id`
-- `String title`
-- `Date date`: The event's date (format 'yyyy-MM-dd')
-- `double ticketPrice`: The price of a ticket for the event
-#### Relationships
-- `List<Ticket> tickets`: A list of tickets for the event (one-to-many relationship)
-
-### Ticket
-#### Properties
-- `Long id`
-- `int place`: The seat number for the ticket
-- `boolean cancelled`: Indicates whether the ticket has been cancelled
-#### Relationships
-- `Event event`: The event the ticket is for (one-to-one relationship)
-- `User user`: The user who owns the ticket (one-to-one relationship)
-- `Category category`: The ticket's category (one-to-one relationship)
-
-### Category
-#### Enumerations
-- `STANDARD`: Standard ticket category
-- `ADVANCED`: Advanced ticket category
-- `PREMIUM`: Premium ticket category
-
-## Exercises
-- Unit tests exercise: To work on this exercise, run `git checkout unit-tests-exercise`
-- Integration tests exercise: To work on this exercise, run `git checkout integration-tests-exercise`
+## Pay attention
+The project already contains all necessary dependencies, so you are not supposed to change the `pom.xml`.
