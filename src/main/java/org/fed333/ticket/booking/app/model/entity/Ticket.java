@@ -34,7 +34,11 @@ public class Ticket implements Identifiable<Long> {
 
     private boolean cancelled;
 
-    public enum Category {STANDARD, PREMIUM, BAR}
+    public enum Category {
+        STANDARD,
+        ADVANCED,
+        PREMIUM
+    }
 
     public Long getEventId() {
         return event.getId();
