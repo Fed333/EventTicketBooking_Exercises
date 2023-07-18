@@ -30,7 +30,7 @@
   "tickets": [
     {"id": 1, "eventId": 1, "userId": 1, "category": "PREMIUM", "place": 12, "cancelled": false},
     {"id": 2, "eventId": 1, "userId": 3, "category": "STANDARD", "place": 13, "cancelled": false},
-    {"id": 3, "eventId": 1, "userId": 5, "category": "BAR", "place": 2, "cancelled": true},
+    {"id": 3, "eventId": 1, "userId": 5, "category": "ADVANCED", "place": 2, "cancelled": true},
     {"id": 4, "eventId": 1, "userId": 13, "category": "STANDARD", "place": 10, "cancelled": true},
     {"id": 5, "eventId": 2, "userId": 11, "category": "STANDARD", "place": 1, "cancelled": false},
     {"id": 6, "eventId": 2, "userId": 14, "category": "STANDARD", "place": 2, "cancelled": false},
